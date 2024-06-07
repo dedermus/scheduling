@@ -1,4 +1,4 @@
-Scheduling task manager for open-admin
+Scheduling task manager for open-admin-core
 ============================
 
 [![StyleCI](https://styleci.io/repos/457982378/shield?branch=main)](https://styleci.io/repos/457982378)
@@ -18,7 +18,7 @@ A web interface for manage task scheduling in laravel.
 ## Installation
 
 ```
-$ composer require open-admin-ext/scheduling
+$ composer require dedermus/scheduling
 
 $ php artisan admin:import scheduling
 ```

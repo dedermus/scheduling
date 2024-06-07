@@ -1,10 +1,10 @@
 <?php
 
-namespace OpenAdmin\Admin\Scheduling;
+namespace OpenAdminCore\Admin\Scheduling;
 
 use Illuminate\Http\Request;
-use OpenAdmin\Admin\Facades\Admin;
-use OpenAdmin\Admin\Layout\Content;
+use OpenAdminCore\Admin\Facades\Admin;
+use OpenAdminCore\Admin\Layout\Content;
 
 class SchedulingController
 {

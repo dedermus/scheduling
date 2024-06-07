@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenAdmin\Admin\Scheduling;
+namespace OpenAdminCore\Admin\Scheduling;
 
 use Illuminate\Console\Scheduling\CallbackEvent;
 use Illuminate\Support\Str;
-use OpenAdmin\Admin\Admin;
-use OpenAdmin\Admin\Extension;
+use OpenAdminCore\Admin\Admin;
+use OpenAdminCore\Admin\Extension;
 
 class Scheduling extends Extension
 {
@@ -161,8 +161,8 @@ class Scheduling extends Extension
     {
         parent::routes(function ($router) {
             /* @var \Illuminate\Routing\Router $router */
-            $router->get('scheduling', 'OpenAdmin\Admin\Scheduling\SchedulingController@index')->name('scheduling-index');
-            $router->post('scheduling/run', 'OpenAdmin\Admin\Scheduling\SchedulingController@runEvent')->name('scheduling-run');
+            $router->get('scheduling', 'OpenAdminCore\Admin\Scheduling\SchedulingController@index')->name('scheduling-index');
+            $router->post('scheduling/run', 'OpenAdminCore\Admin\Scheduling\SchedulingController@runEvent')->name('scheduling-run');
         });
     }
 

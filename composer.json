@@ -1,19 +1,19 @@
 {
-    "name": "open-admin-ext/scheduling",
-    "description": "Task scheduling extension for open-admin",
+    "name": "dedermus/scheduling",
+    "description": "Task scheduling extension for Laravel open-admin-core",
     "type": "library",
-    "keywords": ["open-admin", "task", "Scheduling"],
-    "homepage": "https://github.com/open-admin-org/scheduling",
+    "keywords": ["open-admin-core", "task", "Scheduling"],
+    "homepage": "https://github.com/dedermus/scheduling",
     "license": "MIT",
     "authors": [
         {
-            "name": "open-admin",
-            "email": "info@open-admin.org"
+            "name": "dedermus",
+            "email": "dedermus@yandex.ru"
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "open-admin-org/open-admin": "~1.0"
+        "php": "~7.3|~8.0",
+        "dedermus/open-admin-core": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0",
@@ -21,13 +21,13 @@
     },
     "autoload": {
         "psr-4": {
-            "OpenAdmin\\Admin\\Scheduling\\": "src/"
+            "OpenAdminCore\\Admin\\Scheduling\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "OpenAdmin\\Admin\\Scheduling\\SchedulingServiceProvider"
+                "OpenAdminCore\\Admin\\Scheduling\\SchedulingServiceProvider"
             ]
 
         }

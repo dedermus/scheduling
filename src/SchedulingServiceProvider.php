@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenAdmin\Admin\Scheduling;
+namespace OpenAdminCore\Admin\Scheduling;
 
 use Illuminate\Support\ServiceProvider;
 
