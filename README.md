@@ -21,24 +21,55 @@ A web interface for manage task scheduling in laravel.
 $ composer require dedermus/scheduling
 
 $ php artisan admin:import scheduling
+        
+      
+```
+enter to terminal: `php artisan make:provider ScheduleCommandProvider`
+
+Open `app/Providers/ScheduleCommandProvider.php`.
+
+Add method registerScheduledCommands()
+
+```php
+/**
+* Register scheduled commands from routes/console.php.
+*
+* @return void
+  */
+  protected function registerScheduledCommands()
+  {
+  app()->make('Illuminate\Contracts\Console\Kernel');
+  $events = app()->make('Illuminate\Console\Scheduling\Schedule');
+
+  // Load the routes/console.php file
+  $consoleRoutes = base_path('/routes/console.php');
+
+  if (File::exists($consoleRoutes)) {
+  require $consoleRoutes;
+  }
+  }
+```
+
+add modify method boot()
+
+`$this->registerScheduledCommands();`
+
+Open file `bootstrap/providers.php` and add provider
+```php
+    App\Providers\ScheduleCommandProvider::class,
 ```
 
 Open `http://your-host/admin/scheduling`.
 
-Try to add a scheduling task in `app/Console/Kernel.php` like this:
+Try to add a scheduling task in `routes/console.php` like this:
 
 ```php
-class Kernel extends ConsoleKernel
-{
-    protected function schedule(Schedule $schedule)
-    {
-        $schedule->command('inspire')->everyTenMinutes();
-
-        $schedule->command('route:list')->dailyAt('02:00');
-    }
-}
+Schedule::command('inspire')->everyTenMinutes()->runInBackground();
+Schedule::command('route:list')->dailyAt('02:00');
 
 ```
+Add use `use Illuminate\Support\Facades\Schedule;`
+
 
 And you can find these tasks in scheduling panel.
 

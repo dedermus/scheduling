@@ -3,6 +3,7 @@
 namespace OpenAdminCore\Admin\Scheduling;
 
 use Illuminate\Console\Scheduling\CallbackEvent;
+use Illuminate\Support\Facades\Schedule;
 use Illuminate\Support\Str;
 use OpenAdminCore\Admin\Admin;
 use OpenAdminCore\Admin\Extension;
@@ -21,8 +22,7 @@ class Scheduling extends Extension
      */
     protected function getKernelEvents()
     {
-        app()->make('Illuminate\Contracts\Console\Kernel');
-        $events = app()->make('Illuminate\Console\Scheduling\Schedule')->events();
+        $events = Schedule::events();
 
         return $events;
     }
