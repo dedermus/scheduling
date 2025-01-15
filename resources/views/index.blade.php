@@ -31,7 +31,7 @@
                 <td><span class="label label-success">{{ $event['expression'] }}</span>&nbsp;{{ $event['readable'] }}</td>
                 <td>{{ $event['nextRunDate'] }}</td>
                 <td>{{ $event['description'] }}</td>
-{{--                <td><a class="btn btn-xs btn-primary run-task" data-id="{{ $index+1 }}">Run</a></td>--}}
+                <td><a class="btn btn-xs btn-primary run-task" data-id="{{ $index+1 }}">Run</a></td>
             </tr>
             @endforeach
             </tbody>
